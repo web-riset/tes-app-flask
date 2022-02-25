@@ -31,9 +31,9 @@ metadata:
 spec:
   ports:
   - nodePort: 32224
-    port: 80
+    port: 5000
     protocol: TCP
-    targetPort: 80
+    targetPort: 5000
   selector:
     app: flask-hello
   type: NodePort
