@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: flask-hello
+  name: flask-hello
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-hello
+  template:
+    metadata:
+      labels:
+        app: flask-hello
+    spec:
+      containers:
+      - image: devopsinfotechumm/flask-hello:<TAG>
+        imagePullPolicy: Always
+        name: flask-hello
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: flask-hello
+  name: flask-hello
+  namespace: default
+spec:
+  ports:
+  - nodePort: 32224
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: flask-hello
+  type: NodePort
