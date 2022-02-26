@@ -10,7 +10,7 @@ def hello_tes():
 
 @app.route('/flask')
 def hello_flask():
-    return '<h1>Hello World from Flask!!</h1>'
+    return '<h1>Hello World from Flask!</h1>'
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int("5000"), debug=True)
