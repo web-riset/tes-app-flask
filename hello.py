@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return '<h1>Hello World from Flask!</h1>'
+    return '<h1>Hello World from Flask</h1>'
 @app.route('/tes')
 def hello_tes():
     return '<h1>Hello World from Tes!</h1>'
